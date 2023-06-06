@@ -9,6 +9,7 @@ This app is **not** designed for use in production. Instead, we recommend you us
 - [An AWS account](https://aws.amazon.com/getting-started/)
 - [AWS CDK](https://docs.aws.amazon.com/cdk/v2/guide/home.html)
 - [Docker CLI](https://www.docker.com/) (Docker Desktop is not required)
+- [.NET 6 SDK](https://dotnet.microsoft.com/)
 
 ## Demo contents
 
@@ -43,7 +44,7 @@ This app is **not** designed for use in production. Instead, we recommend you us
     - `appsettings.json` - Configuration for the API
     - `aws-lambda-tools-defaults.json` - Configuration for the lambda runtime
     - `S3Crud.csproj`
-  - Infrastructure
+  - `Infrastructure`
     - `Infrastructure.cs` - Contains the IaC for the CDK stack
 - `cdk.json` - Contains CDK configuration values
 
