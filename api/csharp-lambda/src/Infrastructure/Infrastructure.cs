@@ -48,22 +48,34 @@ namespace Infrastructure
                         "BUCKET_NAME",
                         bucket.BucketName
                     }
-                }
+                },
+                Timeout = Duration.Seconds(10),
+                Tracing = Tracing.ACTIVE
             });
             bucket.GrantRead(listS3ItemsFn);
             var listS3ItemsIntegration = new HttpLambdaIntegration("ListS3Integration", listS3ItemsFn);
 
-            var helloWorldFn = new Function(this, "hello-world", new FunctionProps
+            var s3CrudFn = new Function(this, "s3-crud", new FunctionProps
             {
                 Runtime = Runtime.DOTNET_6,
                 MemorySize = 256,
-                Handler = "HelloWorld",
-                Code = Code.FromAsset("src/HelloWorld", new Amazon.CDK.AWS.S3.Assets.AssetOptions
+                Handler = "S3Crud",
+                Code = Code.FromAsset("src/S3Crud", new Amazon.CDK.AWS.S3.Assets.AssetOptions
                 {
                     Bundling = buildOptions
-                })
+                }),
+                Environment = new Dictionary<string, string>
+                {
+                    {
+                        "BUCKET_NAME",
+                        bucket.BucketName
+                    }
+                },
+                Tracing = Tracing.ACTIVE,
+                Timeout = Duration.Seconds(10),
             });
-            var helloWorldIntegration = new HttpLambdaIntegration("HelloWorldIntegration", helloWorldFn);
+            bucket.GrantRead(s3CrudFn);
+            var s3CrudIntegration = new HttpLambdaIntegration("S3CrudIntegration", s3CrudFn);
 
             var httpApi = new HttpApi(this, "hello-api");
 
@@ -71,14 +83,21 @@ namespace Infrastructure
             {
                 Path = "/",
                 Methods = new[] { Amazon.CDK.AWS.Apigatewayv2.Alpha.HttpMethod.GET },
-                Integration = helloWorldIntegration,
+                Integration = listS3ItemsIntegration,
             });
 
             httpApi.AddRoutes(new AddRoutesOptions
             {
                 Path = "/s3",
                 Methods = new[] { Amazon.CDK.AWS.Apigatewayv2.Alpha.HttpMethod.GET },
-                Integration = listS3ItemsIntegration,
+                Integration = s3CrudIntegration,
+            });
+
+            httpApi.AddRoutes(new AddRoutesOptions
+            {
+                Path = "/s3/{id+}",
+                Methods = new[] { Amazon.CDK.AWS.Apigatewayv2.Alpha.HttpMethod.GET },
+                Integration = s3CrudIntegration,
             });
 
             new CfnOutput(this, "ApiUrl", new CfnOutputProps

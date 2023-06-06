@@ -15,7 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{440CDCD3-A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetFromS3.Tests", "GetFromS3\test\GetFromS3.Tests\GetFromS3.Tests.csproj", "{29851E2E-C73E-45B6-A9D9-51A12B056B92}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorld", "HelloWorld\HelloWorld.csproj", "{0655398E-7910-4031-9069-615EBCD25625}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "S3Crud", "S3Crud\S3Crud.csproj", "{0655398E-7910-4031-9069-615EBCD25625}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
