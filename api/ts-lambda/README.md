@@ -1,8 +1,8 @@
-# C# Lambdas with CDK
+# Typescript Lambdas with CDK
 
 This is a project that demos how to build typescript lambdas using typescript CDK.
 
-This app is **not** designed for use in production. Instead, we recommend you use it as an example for building serverless C# apps on AWS
+This app is **not** designed for use in production. Instead, we recommend you use it as an example for building serverless typescript apps on AWS
 
 ## Prerequisites
 
