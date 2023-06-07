@@ -39,6 +39,7 @@ This app is **not** designed for use in production. Instead, we recommend you us
 ## Performance notes
 
 - Warm lambdas take around 60-80ms to process a request
+- Adding a new lambda adds a few milliseconds to the build time as `esbuild` is quick to build and minify the typescript and does not need to run in a container
 
 |Lambda instance|Lambda size|Cold start time|
 |--|--|--|

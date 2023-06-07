@@ -10,14 +10,14 @@ interface DynamoItem {
   content: string;
 }
 
+const client = new DynamoDBClient({
+  region: "eu-west-1"
+});
+
+const docClient = DynamoDBDocumentClient.from(client);
+
 export const handler: APIGatewayProxyHandlerV2 = async (event, _context) => {
   const { key } = event.pathParameters as { key: string };
-
-  const client = new DynamoDBClient({
-    region: "eu-west-1"
-  });
-
-  const docClient = DynamoDBDocumentClient.from(client);
 
   const response = await docClient.send(new QueryCommand({
     TableName: tableName,

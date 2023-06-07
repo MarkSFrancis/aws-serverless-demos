@@ -3,7 +3,9 @@ import { APIGatewayProxyHandlerV2 } from 'aws-lambda';
 import { DynamoDBDocumentClient, PutCommand } from "@aws-sdk/lib-dynamodb";
 
 const tableName = process.env.TABLE_NAME;
-const client = new DynamoDBClient({});
+const client = new DynamoDBClient({
+  region: "eu-west-1"
+});
 const docClient = DynamoDBDocumentClient.from(client);
 
 interface DynamoItem {

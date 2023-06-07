@@ -61,6 +61,7 @@ This app is **not** designed for use in production. Instead, we recommend you us
 ## Performance notes
 
 - Warm lambdas take around 50-100ms to process a request
+- Adding a new lambda adds around 8 seconds to the `cdk synth` time as `dotnet` needs to build and optimize the output and runs within a container
 
 |Lambda instance|Function or minimal API|Lambda size|Cold start time|
 |--|--|--|--|
