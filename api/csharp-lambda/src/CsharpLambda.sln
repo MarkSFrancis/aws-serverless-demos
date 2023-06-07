@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetFromS3.Tests", "GetFromS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "S3Crud", "S3Crud\S3Crud.csproj", "{0655398E-7910-4031-9069-615EBCD25625}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamoDbCrud", "DynamoDbCrud\DynamoDbCrud.csproj", "{216B874E-2108-42E6-A79F-F80A0B2297EE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -78,6 +80,18 @@ Global
 		{0655398E-7910-4031-9069-615EBCD25625}.Release|x64.Build.0 = Release|Any CPU
 		{0655398E-7910-4031-9069-615EBCD25625}.Release|x86.ActiveCfg = Release|Any CPU
 		{0655398E-7910-4031-9069-615EBCD25625}.Release|x86.Build.0 = Release|Any CPU
+		{216B874E-2108-42E6-A79F-F80A0B2297EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{216B874E-2108-42E6-A79F-F80A0B2297EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{216B874E-2108-42E6-A79F-F80A0B2297EE}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{216B874E-2108-42E6-A79F-F80A0B2297EE}.Debug|x64.Build.0 = Debug|Any CPU
+		{216B874E-2108-42E6-A79F-F80A0B2297EE}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{216B874E-2108-42E6-A79F-F80A0B2297EE}.Debug|x86.Build.0 = Debug|Any CPU
+		{216B874E-2108-42E6-A79F-F80A0B2297EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{216B874E-2108-42E6-A79F-F80A0B2297EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{216B874E-2108-42E6-A79F-F80A0B2297EE}.Release|x64.ActiveCfg = Release|Any CPU
+		{216B874E-2108-42E6-A79F-F80A0B2297EE}.Release|x64.Build.0 = Release|Any CPU
+		{216B874E-2108-42E6-A79F-F80A0B2297EE}.Release|x86.ActiveCfg = Release|Any CPU
+		{216B874E-2108-42E6-A79F-F80A0B2297EE}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{19EFFD7F-F025-4E89-948C-125FB0CECC6F} = {00F4B280-02F0-4012-8BCB-90325199652B}

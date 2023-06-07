@@ -36,5 +36,13 @@ This app is **not** designed for use in production. Instead, we recommend you us
 
 ## Performance notes
 
-- Cold starts take around 1 second
-- Subsequent requests take around 60-80ms
+- Warm lambdas take around 60-80ms to process a request
+
+|Lambda instance|Lambda size|Cold start time|
+|--|--|--|
+|S3 read|128MB|2.4s|
+||256MB|1.3s|
+||512MB|0.9s|
+|DynamoDB read|128MB|2.4s|
+||256MB|1.3s|
+||512MB|0.9s|

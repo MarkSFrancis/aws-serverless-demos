@@ -20,7 +20,7 @@ app.MapGet("/s3", async ([FromServices] IAmazonS3 s3Client, [FromServices] IConf
     });
 
     var itemKeys = s3Items.S3Objects.Select(o => o.Key).ToList();
-    logger.LogInformation($"Scanned {bucketName}, found {itemKeys} items");
+    logger.LogInformation($"Scanned {bucketName}, found {itemKeys.Count} items");
 
     return Results.Ok(new
     {

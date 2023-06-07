@@ -55,11 +55,14 @@ This app is **not** designed for use in production. Instead, we recommend you us
 
 ## Performance notes
 
-- An empty function starts significantly faster than a function that uses any nuget packages
-- For functions:
-  - Cold starts with just an empty function take around 1 second
-  - Cold starts with a function using S3 take around 2 seconds
-- For minimal APIs:
-  - Cold starts with just a "hello world" take around 1.5 seconds
-  - Cold starts with integration to S3 take around 4 seconds
-- Subsequent requests take around 50-100ms
+- Warm lambdas take around 50-100ms to process a request
+
+|Lambda instance|Function or minimal API|Lambda size|Cold start time|
+|--|--|--|--|
+|Hello world|Function|256MB|1s|
+||Minimal API|256MB|1s|
+|S3 read|Function|256MB|1.5s|
+||Minimal API|256MB|4s|
+|DynamoDB read|Minimal API|128MB|8.4s|
+|||256MB|4.3s|
+|||512MB|2.3s|
