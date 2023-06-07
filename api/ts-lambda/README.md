@@ -28,7 +28,7 @@ This app is **not** designed for use in production. Instead, we recommend you us
 - `lib`
   - `ts-lambda-stack.ts` - Contains the IaC for the CDK stack
 - `test`
-  - `listS3Items.test.ts` - Tests for the lambda
+  - `listS3Items.test.ts` - Tests for the `listS3Items.ts` lambda
 - `cdk.json` - Contains CDK configuration values
 
 ## Useful commands
