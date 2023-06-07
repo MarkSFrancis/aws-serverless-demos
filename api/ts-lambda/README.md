@@ -23,6 +23,8 @@ This app is **not** designed for use in production. Instead, we recommend you us
 
 - `src`
   - `listS3Items.ts` - A lambda which lists the contents of a generated S3 bucket
+  - `dynamoDbGet.ts` - A lambda which gets the items from dynamodb in a given key, sorted by date created
+  - `dynamoDbPost.ts` - A lambda which adds a new item to dynamodb for a given key
 - `lib`
   - `ts-lambda-stack.ts` - Contains the IaC for the CDK stack
 - `test`
