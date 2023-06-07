@@ -44,6 +44,11 @@ This app is **not** designed for use in production. Instead, we recommend you us
     - `appsettings.json` - Configuration for the API
     - `aws-lambda-tools-defaults.json` - Configuration for the lambda runtime
     - `S3Crud.csproj`
+  - `DynamoDBCrud` - A minimal API with a range of endpoints for DynamoDB
+    - `Program.cs` - The minimal API source
+    - `appsettings.json` - Configuration for the API
+    - `aws-lambda-tools-defaults.json` - Configuration for the lambda runtime
+    - `DynamoDBCrud.csproj`
   - `Infrastructure`
     - `Infrastructure.cs` - Contains the IaC for the CDK stack
 - `cdk.json` - Contains CDK configuration values
